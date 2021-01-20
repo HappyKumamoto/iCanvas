@@ -1,0 +1,13 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    title Bulletin Board
+  body
+    h1 けいじばん
+    h2 あたらしくきにゅうする
+    form(method="post" action="/posts")
+      div
+        textarea(name="content" cols=40 rows=4)
+      div
+        button(type="submit") はっぴょうする
