@@ -5,9 +5,24 @@ html(lang="ja")
     title Bulletin Board
   body
     h1 けいじばん
+    a(href="/logout") ログアウト
     h2 あたらしくきにゅうする
     form(method="post" action="/posts")
       div
         textarea(name="content" cols=40 rows=4)
       div
         button(type="submit") はっぴょうする
+
+    h2 投稿一覧
+    each content in contents
+      p #{content}
+      hr
+    //-pug の iteration によるループ機能を使っている
+    //-contents という名前の配列から、 配列の一要素である文字列を 
+    //-content という名前で取り出すループ
+    //-ループの中で取り出した要素 content を段落の内容として出力
+      p #{content}
+      hr
+    //-水平線を表す要素も each-in の中に含まれるようインデント
+    //-テンプレートエンジンは、配列のようなコレクションを渡すことで
+    //-繰り返し出力できる機能がある
